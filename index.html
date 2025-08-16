@@ -1,477 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <base target="_self">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quickzy Cleaning Services – Sydney</title>
-    <meta name="description" content="Quickzy Cleaning Services – 25+ years of ISO‑certified commercial cleaning in Sydney. Book online, request a quote, or contact us today.">
-    <link rel="icon" href="https://picsum.photos/64?random=42">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#1e86d2",
-                        secondary: "#2f8555",
-                        accent: "#f6e05e"
-                    },
-                    fontFamily: {
-                        sans: ['"Open Sans"', 'sans-serif'],
-                        heading: ['"Montserrat"', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quickzy Cleaning Services | Sydney Commercial & Office Cleaning</title>
+  <meta name="description" content="Quickzy Cleaning Services provides reliable commercial, office, and strata cleaning across Sydney. Request a free quote today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#1E90FF; /* dodger blue */
+      --primary-dark:#1876d1;
+      --accent:#22c55e; /* green */
+      --ink:#0f172a; /* slate-900 */
+      --muted:#475569; /* slate-600 */
+      --bg:#f8fafc; /* slate-50 */
+      --card:#ffffff;
+      --ring: rgba(30,144,255,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);}
+    a{color:var(--primary);text-decoration:none}
+    img{max-width:100%;display:block}
+    /* layout */
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid rgba(15,23,42,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.2px}
+    .brand__logo{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#60a5fa)}
+    .brand__logo span{font-weight:800;color:#fff}
+    .nav a.btn{margin-left:10px}
+
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;border:1px solid transparent;border-radius:14px;padding:12px 16px;font-weight:600;transition:.2s}
+    .btn--primary{background:var(--primary);color:#fff}
+    .btn--primary:hover{background:var(--primary-dark)}
+    .btn--ghost{background:transparent;border-color:rgba(15,23,42,.12);color:var(--ink)}
+    .btn--ghost:hover{border-color:rgba(15,23,42,.2)}
+
+    /* hero */
+    .hero{position:relative}
+    .hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 0}
+    .kicker{display:inline-block;background:#e8f1ff;color:#0b3b8c;font-weight:700;letter-spacing:.6px;border-radius:999px;padding:8px 14px;font-size:12px;margin-bottom:16px}
+    h1{font-size:clamp(30px,5vw,56px);line-height:1.05;margin:0 0 12px}
+    .lead{font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0 0 24px}
+    .hero__actions{display:flex;flex-wrap:wrap;gap:12px}
+    .checks{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;color:var(--muted)}
+    .checks span{display:flex;align-items:center;gap:8px}
+    .hero__art{position:relative}
+    .card{background:var(--card);border:1px solid rgba(15,23,42,.06);border-radius:var(--radius);box-shadow:0 10px 30px rgba(15,23,42,.06)}
+    .art__stack{display:grid;gap:16px}
+
+    /* trust bar */
+    .trust{padding:22px 0;border-top:1px solid rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.06);background:#fff}
+    .trust__row{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center;color:#0b3b8c;font-weight:600}
+
+    /* sections */
+    section{padding:72px 0}
+    .section__head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    h2{font-size:clamp(24px,3.4vw,36px);margin:0}
+    .sub{color:var(--muted)}
+
+    /* services grid */
+    .grid{display:grid;gap:18px}
+    .grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .service{padding:22px;border-radius:16px;border:1px solid rgba(15,23,42,.06);background:#fff}
+    .service h3{margin:10px 0 6px;font-size:18px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* feature cards */
+    .feature{display:flex;gap:14px;padding:18px;border-radius:16px;border:1px solid rgba(15,23,42,.06);background:#fff}
+    .feature__icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#eef6ff}
+
+    /* steps */
+    .steps{counter-reset:step}
+    .step{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid rgba(15,23,42,.06);border-radius:16px;background:#fff}
+    .step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#e8f1ff;color:#0b3b8c;font-weight:700}
+
+    /* team */
+    .team{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .member{padding:20px;border-radius:16px;border:1px solid rgba(15,23,42,.06);background:#fff;text-align:center}
+    .avatar{width:82px;height:82px;border-radius:50%;margin:0 auto 12px;background:linear-gradient(135deg,#e2e8f0,#f8fafc);display:grid;place-items:center;font-weight:800;color:#0b3b8c}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    form{display:grid;gap:12px}
+    .field{display:grid;gap:6px}
+    input,textarea{padding:12px 14px;border:1px solid #e2e8f0;border-radius:12px;font:inherit}
+    input:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px var(--ring)}
+
+    /* footer */
+    footer{margin-top:24px;background:#0b3b8c;color:#e6f0ff}
+    .footgrid{display:grid;gap:22px;grid-template-columns:2fr 1fr 1fr}
+    .tiny{color:#bcd3ff;font-size:14px}
+    .copyright{border-top:1px solid rgba(255,255,255,.18);padding:16px 0;margin-top:10px;color:#cfe0ff;font-size:14px}
+
+    /* responsive */
+    @media (max-width: 1000px){
+      .hero__grid, .contact{grid-template-columns:1fr}
+    }
+    @media (max-width: 800px){
+      .grid--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .team{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 560px){
+      .grid--4,.grid--3{grid-template-columns:1fr}
+      .team{grid-template-columns:1fr}
+      .nav .hide-sm{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Quickzy Cleaning Services",
+    "image":"",
+    "url":"",
+    "telephone":"+61452106017",
+    "email":"quickzycleaninig@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Sydney",
+      "addressRegion":"NSW",
+      "addressCountry":"AU"
+    },
+    "areaServed":"Sydney",
+    "founder":"Pushpa Bhandari",
+    "employee":[
+      {"@type":"Person","name":"Pushpa Bhandari","jobTitle":"Chief Executive Officer"},
+      {"@type":"Person","name":"Pradip Bhandari","jobTitle":"Managing Director"},
+      {"@type":"Person","name":"Priyanka Bhandari","jobTitle":"Finance Head"}
+    ],
+    "department":"Commercial Cleaning"
+  }
+  </script>
 </head>
-<body class="font-sans bg-white min-h-screen relative">
-    <!-- Cookie Notice -->
-    <div id="cookieNotice" class="fixed bottom-0 left-0 right-0 bg-white shadow-md p-4 z-50 hidden">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between md:py-3">
-            <p class="text-sm md:text-base text-gray-700 mb-2 md:mb-0">
-                We use cookies to improve your experience. By continuing, you consent to our use of cookies.
-            </p>
-            <div class="flex space-x-2">
-                <button onclick="acceptCookies()" class="px-4 py-2 bg-primary text-white rounded hover:bg-blue-800 transition">Accept</button>
-                <button onclick="declineCookies()" class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition">Decline</button>
-            </div>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Quickzy Cleaning Services home">
+        <div class="brand__logo" aria-hidden="true"><span>Q</span></div>
+        <div>
+          <div style="font-size:16px">Quickzy</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:-2px">Cleaning Services</div>
         </div>
+      </a>
+      <nav>
+        <a class="hide-sm" href="#services">Services</a>
+        <a class="hide-sm" href="#why">Why us</a>
+        <a class="hide-sm" href="#process">Process</a>
+        <a class="hide-sm" href="#team">Team</a>
+        <a class="hide-sm" href="#contact">Contact</a>
+        <a class="btn btn--ghost" href="tel:+61452106017">Call +61 452 106 017</a>
+        <a class="btn btn--primary" href="#quote">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="kicker">Sydney • Commercial & Office Cleaning</span>
+        <h1>Immaculate spaces, zero hassle.</h1>
+        <p class="lead">Quickzy Cleaning Services keeps your office, strata, retail and industrial sites spotless with reliable schedules, vetted cleaners and quality control built in.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="tel:+61452106017">Call now</a>
+          <a class="btn btn--ghost" href="mailto:quickzycleaninig@gmail.com">Email us</a>
+        </div>
+        <div class="checks" aria-label="Highlights">
+          <span>✔ Police-checked staff</span>
+          <span>✔ Eco-friendly products</span>
+          <span>✔ Flexible after-hours</span>
+        </div>
+      </div>
+      <div class="hero__art">
+        <div class="art__stack">
+          <div class="card" style="padding:18px">
+            <strong>Free Site Assessment</strong>
+            <p class="sub" style="margin:6px 0 0">We tailor a cleaning plan to your building and budget.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <strong>Quality Guarantee</strong>
+            <p class="sub" style="margin:6px 0 0">If something's not right, we fix it within 24 hours.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <strong>All Sydney Suburbs</strong>
+            <p class="sub" style="margin:6px 0 0">From CBD to Parramatta, North Shore to Sutherland.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-40">
-        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="#" class="flex items-center text-2xl font-heading font-bold text-primary" onclick="navigate('');return false;">
-                <span>Quickzy</span>
-                <span class="ml-1 text-secondary">Cleaning Services</span>
-            </a>
-            <div class="hidden md:flex space-x-6 text-gray-700">
-                <a href="#home" class="hover:text-primary" onclick="navigate('home');return false;">Home</a>
-                <a href="#about" class="hover:text-primary" onclick="navigate('about');return false;">About</a>
-                <a href="#services" class="hover:text-primary" onclick="navigate('services');return false;">Services</a>
-                <a href="#blog" class="hover:text-primary" onclick="navigate('blog');return false;">Blog</a                <a href="#contact" class="hover:text-primary" onclick="navigate('contact');return false;">Contact</a>
-                <a href="#login" class="hover:text-primary" onclick="openLogin();return false;">Login</a>
-            </div>
-            <div class="md:hidden flex items-center space-x-4">
-                <a href="#book" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-800 transition" onclick="navigate('book');return false;">Book Now</a>
-                <button id="mobileBtn" class="text-2xl" onclick="toggleMobileMenu();">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobileMenu" class="hidden bg-white shadow-md">
-            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="navigate('home');toggleMobileMenu();return false;">Home</a>
-            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="navigate('about');toggleMobileMenu();return false;">About</a>
-            <a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="navigate('services');toggleMobileMenu();return false;">Services</a>
-            <a href="#blog" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="navigate('blog');toggleMobileMenu();return false;">Blog</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="navigate('contact');toggleMobileMenu();return false;">Contact</a>
-            <a href="#login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="openLogin();toggleMobileMenu();return false;">Login</a>
-            <a href="#book" class="block px-4 py-2 text-primary font-semibold" onclick="navigate('book');toggleMobileMenu();return false;">Book Now</a>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="home">
-        <!-- Hero Section -->
-        <section class="bg-primary text-white py-20 md:py-28">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2">
-                    <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">Welcome to Quickzy Cleaning Services</h1>
-                    <p class="text-xl mb-8">Sydney’s trusted ISO‑certified commercial cleaning partner. Over 25 years of experience delivering spotless results with eco‑friendly products.</p>
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                        <a href="#book" class="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition" onclick="navigate('book');return false;">Book Online Now</a>
-                        <a href="#services" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="navigate('services');return false;">Explore Services</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <img src="https://picsum.photos/600/400?random=101" alt="Professional cleaning team at work" class="rounded-lg shadow-xl w-full" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <!-- TRUST SIGNALS -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4">
-                    <i class="fas fa-shield-alt text-4xl text-primary mb-2"></i>
-                    <h3 class="font-bold mb-1">ISO Certified</h3>
-                    <p class="text-sm text-gray-600">International Standard for quality & safety</p>
-                </div>
-                <div class="p-4">
-                    <i class="fas fa-check-circle text-4xl text-primary mb-2"></i>
-                    <h3 class="font-bold mb-1">100% Satisfaction</h3>
-                    <p class="text-sm text-gray-600">Guaranteed or refund</p>
-                </div>
-                <div class="p-4">
-                    <i class="fas fa-users text-4xl text-primary mb-2"></i>
-                    <h3 class="font-bold mb-1">Eco Friendly</h3>
-                    <p class="text-sm text-gray-600">Non‑toxic, green products</p>
-                </div>
-                <div class="p-4">
-                    <i class="fas fa-file-check text-4xl text-primary mb-2"></i>
-                    <h3 class="font-bold mb-1">Fully Insured</h3>
-                    <p class="text-sm text-gray-600">Up to $5M public liability</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <h2 class="text-3xl font-heading font-bold mb-6">About Quickzy</h2>
-                    <p class="mb-4 text-gray-700">Founded in 1999, Quickzy Cleaning Services is a family‑owned business that has grown to become Sydney’s leading provider of commercial and office cleaning. Our trained, insured cleaners use eco‑friendly products to deliver impeccable results every time.</p>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>25+ years of industry experience.</li>
-                        <li>ISO 9001 certified cleaning processes.</li>
-                        <li>Flexible scheduling – 7 days a week, including after‑hours.</li>
-                        <li>Free on‑site quotes and a complimentary first deep clean for new clients.</li>
-                    </ul>
-                    <div class="mt-6 flex space-x-4">
-                        <a href="https://www.facebook.com" target="_blank" class="text-primary hover:text-blue-700"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com" target="_blank" class="text-primary hover:text-pink-600"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="https://www.linkedin.com" target="_blank" class="text-primary hover:text-blue-600"><i class="fab fa-linkedin fa-2x"></i></a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="https://picsum.photos/500/400?random=102" alt="Team in Sydney office" class="rounded-lg shadow-md w-full" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section id="services" class="py-20 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-heading font-bold mb-4">Our Cleaning Services</h2>
-                <p class="text-gray-700 mb-12">Professional solutions for office, commercial, and industrial premises.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                        <i class="fas fa-briefcase text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Office Cleaning</h3>
-                        <p class="text-gray-600 mb-4">Daily, weekly or monthly office cleaning, including windows, carpets & sanitation.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-primary">$250</span>
-                            <a href="#book" class="text-secondary hover:text-green-500" onclick="navigate('book');return false;">Book Now</a>
-                        </div>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                        <i class="fas fa-drumstick-bite text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Commercial Cleaning</h3>
-                        <p class="text-gray-600 mb-4">Full office & retail cleaning, tailored schedules & eco‑friendly products.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-primary">$350</span>
-                            <a href="#book" class="text-secondary hover:text-green-500" onclick="navigate('book');return false;">Book Now</a>
-                        </div>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                        <i class="fas fa-broom text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Deep Cleaning</h3>
-                        <p class="text-gray-600 mb-4">Intensive cleaning of every corner – carpets, vents, and hard‑to‑reach areas.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-primary">$500</span>
-                            <a href="#book" class="text-secondary hover:text-green-500" onclick="navigate('book');return false;">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12">
-                    <a href="#book" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition" onclick="navigate('book');return false;">Book All Services</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- BOOKING SECTION -->
-        <section id="book" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-heading font-bold text-center mb-6">Book an Appointment</h2>
-                <p class="text-gray-700 text-center mb-12 max-w-2xl mx-auto">Fill out the form below and we’ll confirm your booking within 24 hrs.</p>
-                <form id="bookingForm" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md space-y-6">
-                    <!-- Service type -->
-                    <div>
-                        <label for="bsService" class="block text-gray-700 font-medium mb-1">Service Type</label>
-                        <select id="bsService" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                            <option value="">Select a service</option>
-                            <option value="office">Office Cleaning</option>
-                            <option value="commercial">Commercial Cleaning</option>
-                            <option value="deep">Deep Cleaning</option>
-                       >
-                    </div>
-                    <!-- Preferred date -->
-                    <div>
-                        <label for="bsDate" class="block text-gray-700 font-medium mb-1">Preferred Date</label>
-                        <input type="date" id="bsDate" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                    </div>
-                    <!-- Name -->
-                    <div>
-                        <label for="bsName" class="block text-gray-700 font-medium mb-1">Full Name</label>
-                        <input type="text" id="bsName" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                    </div>
-                    <!-- Email -->
-                    <div>
-                        <label for="bsEmail" class="block text-gray-700 font-medium mb-1">Email</label>
-                        <input type="email" id="bsEmail" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                    </div>
-                    <!-- Phone -->
-                    <div>
-                        <label for="bsPhone" class="block text-gray-700 font-medium mb-1">Phone</label>
-                        <input type="tel" id="bsPhone" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                    </div>
-                    <!-- Address -->
-                    <div>
-                        <label for="bsAddress" class="block text-gray-700 font-medium mb-1">Business Address</label>
-                        <textarea id="bsAddress" rows="2" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
-                    </div>
-                    <!-- Notes -->
-                    <div>
-                        <label for="bsNotes" class="block text-gray-700 font-medium mb-1">Special Instructions</label>
-                        <textarea id="bsNotes" rows="3" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                    </div>
-                    <!-- Consent -->
-                    <div class="flex items-center">
-                        <input type="checkbox" id="bsConsent" class="h-4 w-4 text-primary" required>
-                        <label for="bsConsent" class="ml-2 text-gray-700">I agree to the <a href="#terms" class="text-primary hover:underline">Terms</a> and <a href="#privacy" class="text-primary hover:underline">Privacy Policy</a>.</label>
-                    </div>
-                    <!-- Submit -->
-                    <div>
-                        <button type="submit" class="w-full bg-secondary text-white py-3 rounded-md font-semibold hover:bg-green-600 transition">Confirm Booking</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- BLOG SECTION -->
-        <section id="blog" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-heading font-bold mb-4 text-center">Cleaning Tips & News</h2>
-                <p class="mb-12 text-gray-700 text-center max-w-2xl mx-auto">Stay updated with the latest industry insights and homeowner tips.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <article class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                        <img src="https://picsum.photos/400/300?random=103" alt="Eco cleaning tips" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">5 Green Cleaning Hacks</h3>
-                            <p class="text-gray-600 mb-4">Learn to keep your office spotless using safe, eco‑friendly products.</p>
-                            <a href="#read" class="text-secondary hover:text-green-500">Read More</a>
-                        </div>
-                    </article>
-                    <article class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                        <img src="https://picsum.photos/400/300?random=104" alt="Industry news" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Quickzy Expansion</h3>
-                            <p class="text-gray-600 mb-4">We’re now servicing all major suburbs across Sydney.</p>
-                            <a href="#read" class="text-secondary hover:text-green-500">Read More</a>
-                        </div>
-                    </article>
-                    <article class="bg-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                        <img src="https://picsum.photos/400/300?random=105" alt="Deep cleaning" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Deep Clean Checklist</h3>
-                            <p class="text-gray-600 mb-4">Your guide to thorough office sanitation.</p>
-                            <a href="#read" class="text-secondary hover:text-green-500">Read More</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-3xl font-heading font-bold mb-4">Get in Touch</h2>
-                    <p class="mb-8 text-gray-700">Questions? Need a quote? Contact us.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
-                            <div>
-                                <h4 class="font-semibold">Office Location</h4>
-                                <p>123 Quickzy Way, Sydney NSW 2000</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-primary mr-3 mt-1"></i>
-                            <div>
-                                <h4 class="font-semibold">Phone</h4>
-                                <p>02 9160 7469</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-primary mr-3 mt-1"></i>
-                            <div>
-                                <h4 class="font-semibold">Email</h4>
-                                <p>info@quickzyclean.com.au</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex space-x-4">
-                        <a href="https://facebook.com" target="_blank" class="text-primary hover:text-blue-700"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://instagram.com" target="_blank" class="text-primary hover:text-pink-600"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="https://linkedin.com" target="_blank" class="text-primary hover:text-blue-600"><i class="fab fa-linkedin fa-2x"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="cName" class="block text-gray-700 font-medium mb-1">Name</label>
-                                <input type="text" id="cName" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                            </div>
-                            <div>
-                                <label for="cEmail" class="block text-gray-700 font-medium mb-1">Email</label>
-                                <input type="email" id="cEmail" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="cMessage" class="block text-gray-700 font-medium mb-1">Message</label>
-                            <textarea id="cMessage" rows="4" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-blue-800 transition">Send Message</button>
-                    </form>
-                </div>
-            </div>
-            <div class="container mx-auto mt-10">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.647527752395!2d151.2073223152106!3d-33.86782698065596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae665e892fdd%3A0x3133f8d75a1ac251!2sSydney%20Opera%20House!5e0!3m2!1sen!2sau!4v1625555555555!5m2!1sen!2sau"
-                 width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="font-heading font-bold text-lg mb-4">Quickzy Cleaning Services</h3>
-                <p>Reliable, ISO‑certified commercial cleaning across Sydney. 25+ years of expertise.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="#home" class="hover:text-white" onclick="navigate('home');return false;">Home</a></li>
-                    <li><a href="#about" class="hover:text-white" onclick="navigate('about');return false;">About Us</a></li>
-                    <li><a href="#services" class="hover:text-white" onclick="navigate('services');return false;">Services</a></li>
-                    <li><a href="#blog" class="hover:text-white" onclick="navigate('blog');return false;">Blog</a></li>
-                    <li><a href="#contact" class="hover:text-white" onclick="navigate('contact');return false;">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Our Services</h4>
-                <ul class="space-y-2">
-                    <li><a href="#book" class="hover:text-white" onclick="navigate('book');return false;">Book Now</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Legal</h4>
-                <ul class="space-y-2">
-                    <li><a href="#privacy" class="hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#terms" class="hover:text-white">Terms of Service</a></li>
-                    <li><a href="#cookies" class="hover:text-white">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-8 border-t border-gray-700 pt-4 text-sm text-center text-gray-400">
-            © 2025 Quickzy Cleaning Services. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- Live Chat Widget -->
-    <div id="chatBox" class="fixed bottom-8 right-8 z-50">
-        <button onclick="toggleChat()" class="w-14 h-14 bg-primary rounded-full shadow flex items-center justify-center text-white hover:bg-blue-800 transition">
-            <i class="fas fa-comment-dots fa-2x"></i>
-        </button>
-        <div id="chatWindow" class="hidden absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl overflow-hidden">
-            <div class="bg-primary text-white p-4 flex justify-between items-center">
-                <span class="font-semibold">Live Chat</span>
-                <button onclick="toggleChat()" class="text-white hover:text-gray-200"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="p-4 h-80 overflow-y-auto" id="chatMessages">
-                <p class="text-sm text-gray-500 text-center mt-24">Chat will start here.</p>
-            </div>
-            <div class="p-4 border-t">
-                <input type="text" placeholder="Type a message…" class="w-full border border-gray-300 rounded-l-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary">
-                <button class="bg-primary text-white rounded-r-lg p-2 hover:bg-blue-800"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
+    <div class="trust">
+      <div class="container trust__row">
+        <span>Insured</span>·<span>Background-checked</span>·<span>OH&S Compliant</span>·<span>Locally Operated</span>
+      </div>
     </div>
+  </main>
 
-    <!-- Login Modal -->
-    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-60 hidden">
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-bold">Customer Login</h2>
-                    <button onclick="closeModal('loginModal')" class="text-gray-500 hover:text-gray-700"><i class="fas fa-times"></i></button>
-                </div>
-                <form id="loginForm" class="space-y-4">
-                    <div>
-                        <label for="logEmail" class="block text-gray-700 font-medium mb-1">Email</label>
-                        <input type="email" id="logEmail" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                    </div>
-                    <div>
-                        <label for="logPass" class="block text-gray-700 font-medium mb-1">Password</label>
-                        <input type="password" id="logPass" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="h-4 w-4 text-primary mr-2">
-                            <span class="text-sm">Remember me</span>
-                        </label>
-                        <a href="#forgot" class="text-primary text-sm hover:underline">Forgot?</a>
-                    </div>
-                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-blue-800 transition">Login</button>
-                </form>
-            </div>
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Services we provide</h2>
+          <p class="sub">Everything your workplace needs, delivered on time—every time.</p>
         </div>
+        <a class="btn btn--ghost" href="#quote">Request a free quote</a>
+      </div>
+      <div class="grid grid--4">
+        <div class="service">
+          <h3>Office Cleaning</h3>
+          <p>Daily/weekly cleans, kitchens, desks, bins, bathrooms.</p>
+        </div>
+        <div class="service">
+          <h3>Commercial & Retail</h3>
+          <p>Showrooms, shops and hospitality front/back of house.</p>
+        </div>
+        <div class="service">
+          <h3>Strata & Common Areas</h3>
+          <p>Lobbies, lifts, car parks, glass, pressure wash.</p>
+        </div>
+        <div class="service">
+          <h3>Carpet & Floor Care</h3>
+          <p>Steam clean, machine scrub, seal & polish programs.</p>
+        </div>
+        <div class="service">
+          <h3>Medical & Clinics</h3>
+          <p>Clinical touchpoint disinfection and waste handling.</p>
+        </div>
+        <div class="service">
+          <h3>Education Facilities</h3>
+          <p>Schools, childcare—safe, consistent and secure.</p>
+        </div>
+        <div class="service">
+          <h3>End‑of‑Lease</h3>
+          <p>Detailed vacate cleans for handover readiness.</p>
+        </div>
+        <div class="service">
+          <h3>Industrial & Warehouses</h3>
+          <p>High‑dusting, machine areas and amenities.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-        // Navigation handling
-        function navigate(section) {
-            const elem = document.getElementById(section);
-            if (elem) {
-                elem.scrollIntoView({ behavior: 'smooth' });
-                history.pushState({ section: section }, '', '#' + section);
-            }
-        }
+  <!-- Why Choose Us -->
+  <section id="why" style="background:#fff">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Why businesses choose Quickzy</h2>
+          <p class="sub">A dependable, Sydney‑based team led by experienced owners.</p>
+        </div>
+      </div>
+      <div class="grid grid--3">
+        <div class="feature">
+          <div class="feature__icon">🧹</div>
+          <div>
+            <strong>Tailored checklists</strong>
+            <p class="sub">Site‑specific scopes aligned to your compliance needs.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">✅</div>
+          <div>
+            <strong>Quality audits</strong>
+            <p class="sub">Regular inspections with report‑backs and action tracking.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🕒</div>
+          <div>
+            <strong>After‑hours friendly</strong>
+            <p class="sub">We work around your opening hours with minimal disruption.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🌱</div>
+          <div>
+            <strong>Green products</strong>
+            <p class="sub">Low‑tox, eco‑label supplies safe for staff and visitors.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🧾</div>
+          <div>
+            <strong>Transparent pricing</strong>
+            <p class="sub">Clear proposals—no hidden extras or lock‑in surprises.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🛡️</div>
+          <div>
+            <strong>Fully insured</strong>
+            <p class="sub">Public liability & workers comp for complete peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        window.addEventListener('popstate', (e) => {
-            const section = e.state?.section || 'home';
-            navigate(section);
-        });
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Our simple process</h2>
+          <p class="sub">From first call to first clean in as little as 72 hours.</p>
+        </div>
+      </div>
+      <div class="grid grid--3 steps">
+        <div class="step">
+          <div>
+            <strong>Book a walkthrough</strong>
+            <p class="sub">We inspect your site and define scope, frequency and KPIs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <strong>Receive your quote</strong>
+            <p class="sub">A clear proposal with inclusions, schedule and pricing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <strong>Onboard & start</strong>
+            <p class="sub">We assign trained staff and commence with quality checks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
+  <!-- Team -->
+  <section id="team" style="background:#fff">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Leadership</h2>
+          <p class="sub">A hands‑on management team available when you need us.</p>
+        </div>
+      </div>
+      <div class="team">
+        <div class="member">
+          <div class="avatar">PB</div>
+          <strong>Pushpa Bhandari</strong>
+          <p class="sub">Chief Executive Officer</p>
+        </div>
+        <div class="member">
+          <div class="avatar">PRB</div>
+          <strong>Pradip Bhandari</strong>
+          <p class="sub">Managing Director</p>
+        </div>
+        <div class="member">
+          <div class="avatar">PRY</div>
+          <strong>Priyanka Bhandari</strong>
+          <p class="sub">Finance Head</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Login modal
-        function openLogin() { document.getElementById('loginModal').classList.remove('hidden'); }
-        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+  <!-- Quote / Contact -->
+  <section id="quote" style="background:linear-gradient(180deg,#ffffff, #f2f7ff)">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Request a free quote</h2>
+          <p class="sub">Tell us about your site and preferred schedule.</p>
+        </div>
+      </div>
+      <div class="contact">
+        <form action="#" method="post" class="card" style="padding:18px">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" placeholder="e.g. Alex from ACME Pty Ltd" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="e.g. 04xx xxx xxx">
+          </div>
+          <div class="field">
+            <label for="message">What do you need cleaned?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Office size, frequency, start date…"></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send request</button>
+          <p class="tiny">By sending, you consent to be contacted about your enquiry.</p>
+        </form>
+        <aside class="card" style="padding:22px">
+          <h3 style="margin:0 0 6px">Contact</h3>
+          <p class="sub" style="margin:0 0 10px">Sydney, Australia</p>
+          <p style="margin:0 0 8px"><strong>Phone:</strong> <a href="tel:+61452106017">+61 452 106 017</a></p>
+          <p style="margin:0 0 8px"><strong>Email:</strong> <a href="mailto:quickzycleaninig@gmail.com">quickzycleaninig@gmail.com</a></p>
+          <hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0">
+          <p class="tiny">Business hours: 24HR • After‑hours cleans available</p>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-        // Form submissions (placeholder)
-        document.getElementById('bookingForm').addEventListener('submit', e => { e.preventDefault(); alert('Booking submitted.'); });
-        document.getElementById('contactForm').addEventListener('submit', e => { e.preventDefault(); alert('Message sent.'); });
-        document.getElementById('loginForm').addEventListener('submit', e => { e.preventDefault(); closeModal('loginModal'); alert('Logged in.'); });
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:28px 0 10px">
+      <div class="footgrid">
+        <div>
+          <div class="brand" style="margin-bottom:8px">
+            <div class="brand__logo" aria-hidden="true"><span>Q</span></div>
+            <div>
+              <div style="font-size:16px;color:#fff">Quickzy Cleaning Services</div>
+              <div class="tiny">Sydney, Australia</div>
+            </div>
+          </div>
+          <p class="tiny">Professional commercial, office and strata cleaning across Sydney. Eco‑friendly products, insured and background‑checked crew.</p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <ul class="tiny" style="list-style:none;padding:0;margin:10px 0 0">
+            <li>CEO: Pushpa Bhandari</li>
+            <li>Managing Director: Pradip Bhandari</li>
+            <li>Finance Head: Priyanka Bhandari</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Get in touch</strong>
+          <ul class="tiny" style="list-style:none;padding:0;margin:10px 0 0">
+            <li><a style="color:#e6f0ff" href="tel:+61452106017">+61 452 106 017</a></li>
+            <li><a style="color:#e6f0ff" href="mailto:quickzycleaninig@gmail.com">quickzycleaninig@gmail.com</a></li>
+            <li><a style="color:#e6f0ff" href="#quote">Request a quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">© <span id="y"></span> Quickzy Cleaning Services. All rights reserved.</div>
+    </div>
+  </footer>
 
-        // Cookie Notice
-        function acceptCookies() { localStorage.setItem('j_cookies', 'accepted'); document.getElementById('cookieNotice').classList.add('hidden'); }
-        function declineCookies() { localStorage.setItem('j_cookies', 'declined'); document.getElementById('cookieNotice').classList.add('hidden'); }
-        if (localStorage.getItem('j_cookies') !== 'accepted') {
-            document.getElementById('cookieNotice').classList.remove('hidden');
-        }
-
-        // Live Chat toggle
-        function toggleChat() { document.getElementById('chatWindow').classList.toggle('hidden'); }
-    </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
